@@ -34,7 +34,7 @@ const App = () => {
       });
     };
     completeRequest();
-  }, [query, page]);
+  }, [query, page, totalPages]);
 
   const handleSearch = searchValue => {
     if (searchValue !== '') {
