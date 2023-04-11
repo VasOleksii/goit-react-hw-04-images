@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import css from './Modal.module.css';
 import { useEffect } from 'react';
@@ -9,11 +8,10 @@ const Modal = props => {
       props.onClose();
     }
   };
-
   useEffect(() => {
     document.addEventListener('keydown', handleKeyPress);
     return () => {};
-  }, []);
+  });
 
   return (
     <div id="modal" onClick={props.onClickClose} className={css.Overlay}>

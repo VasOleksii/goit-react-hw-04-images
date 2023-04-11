@@ -10,7 +10,7 @@ import css from './App.module.css';
 
 const App = () => {
   const [query, setQuery] = useState('');
-  const [page, setPage] = useState('1');
+  const [page, setPage] = useState('');
   const [totalPages, setTotalPages] = useState('');
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect(() => {
     const completeRequest = () => {
-      if (page > totalPages && page !== 1) {
+      if (query === '') {
         return;
       }
       const PER_PAGE = 12;
@@ -34,7 +34,7 @@ const App = () => {
       });
     };
     completeRequest();
-  }, [query, page, totalPages]);
+  }, [query, page]);
 
   const handleSearch = searchValue => {
     if (searchValue !== '') {
