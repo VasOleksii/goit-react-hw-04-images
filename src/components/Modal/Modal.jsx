@@ -14,7 +14,7 @@ const Modal = ({ onClose, onClickClose, largeImageUrl, id }) => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [onClickClose, onClose]);
+  }, [onClose]);
 
   return (
     <div id="modal" onClick={onClickClose} className={css.Overlay}>
